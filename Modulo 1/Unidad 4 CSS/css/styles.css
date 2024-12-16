@@ -1,0 +1,56 @@
+html {
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+body {
+    width: 50%;
+    background-color: #dddad3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    box-shadow: 0px 0px 8px 1px black;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-shadow: 1px 1px 2px #ffffff;
+}
+
+.img_perfil {
+    border-radius: 50%;
+    height: 250px;
+    box-shadow: 0px 0px 9px 2px #9d9e9f;
+}
+
+.h1_perfil {
+    font-size: 3em;
+    color: #434459;
+    text-shadow: 1px 1px 2px #ffffff;
+}
+
+.strong_title {
+    font-weight: bold;
+    color: #37474F;
+    font-family: system-ui;
+}
+
+p {
+    font-weight: bold;
+    width: 80%;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
