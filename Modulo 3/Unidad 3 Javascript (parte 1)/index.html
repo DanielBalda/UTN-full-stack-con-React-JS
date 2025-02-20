@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Ejercicio 1</h3>
+    <label>Ingresar Distancia</label>
+    <input type="text" id="distance">
+    <p>El medio de transporte apropiado es <b id="response">-</b></p>
+
+    <h3>Ejercicio 2</h3>
+    <label>Ingresar numeros separados por coma </label>
+    <input type="text" id="array">
+    <button id="send">Obtener el mayor</button>
+    <p>El mayor es: <b id="max">-</b></p>
+    <script>
+        const distance = document.getElementById("distance")
+        const response = document.getElementById("response")
+        let number = 0
+        distance.addEventListener("keyup", () => {
+            response.innerText = "-"
+            number = parseInt(distance.value)
+            if (number > -1 & number < 1001) {
+                response.innerText = "a pie"
+            }
+            if (number > 1000 & number < 10001) {
+                response.innerText = "a bicicleta"
+            }
+            if (number > 10000 & number < 30001) {
+                response.innerText = "en colectivo"
+            }
+            if (number > 30000 & number < 100001) {
+                response.innerText = "en auto"
+            }
+            if (number > 100000) {
+                response.innerText = "en avion"
+            }
+        })
+        function getMax(array) {
+            return Math.max(...array)
+        }
+        const btn = document.getElementById("send")
+        btn.addEventListener("click",()=>{
+            const result = getMax(document.getElementById("array").value.split(","))
+            document.getElementById("max").innerText = result
+        })
+    </script>
+</body>
+
+</html>
