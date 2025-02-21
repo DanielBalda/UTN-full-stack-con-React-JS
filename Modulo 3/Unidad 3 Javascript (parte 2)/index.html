@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Ejercicio 1</h3>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <h3>Ejercicio 2</h3>
+    <textarea class="textarea" id="textArea"></textarea>
+
+    <p>Longitud del texto <b id="long">0</b></p>
+    <h3>Ejercicio 3</h3>
+    Alumnos aprobados con mas de 7
+    <p id="alumnos_p"></p>
+    <script>
+        const boxes = [...document.getElementsByClassName("box")]
+        boxes.map((e) => {
+            e.addEventListener("click", () => {
+                document.body.style.background = getComputedStyle(e).background
+            })
+        })
+
+        const textArea = document.getElementById("textArea")
+        const long = document.getElementById("long")
+        textArea.addEventListener("keyup", () => {
+            long.innerText = textArea.value.length
+        })
+
+        var alumnos = [
+            {
+                nombre: 'Juan Gomez',
+                nota: 7
+            }, {
+                nombre: 'Pedro Rodriguez',
+                nota: 4
+            }, {
+                nombre: 'Roxana García',
+                nota: 8
+            }, {
+                nombre: 'Luciano Lopez',
+                nota: 5
+            }, {
+                nombre: 'Fernanda Gimenez',
+                nota: 6
+            }, {
+                nombre: 'Florencia Martinez',
+                nota: 10
+            }, {
+                nombre: 'Raul Sanchez',
+                nota: 7
+            }, {
+                nombre: 'Sandra Figueroa',
+                nota: 8
+            }
+        ];
+
+        const aprobados = alumnos.filter(alumno => alumno.nota > 6)
+        const alumnos_p = document.getElementById("alumnos_p")
+
+        alumnos_p.innerText = JSON.stringify(aprobados)
+    </script>
+</body>
+
+</html>
